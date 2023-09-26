@@ -458,7 +458,7 @@
         <form class="form">
           <fieldset class="form-group">
             <legend class="group-title">Deje sus datos, nos contactaremos con usted</legend>
-            <label class="label-1" for="user_register">Nombre</label>
+            <label class="label-1" for="user_name">Nombre</label>
             <div class="icon-register">
               <input title="form-register" type="text" id="user_name" name="usuario" required />
               <svg class="user-icon" width="18" height="18">
@@ -466,7 +466,7 @@
               </svg>
             </div>
 
-            <label class="label-2" for="tel-register">Teléfono</label>
+            <label class="label-2" for="user-phone">Teléfono</label>
             <div class="icon-register">
               <input title="form-register" type="tel" id="user_phone" name="phone" required />
               <svg class="user-icon" width="18" height="18">
@@ -474,40 +474,25 @@
               </svg>
             </div>
 
-            <label class="label-3" for="email_register">E-mail</label>
+            <label class="label-3" for="user_email">E-mail</label>
             <div class="icon-register">
               <input title="form-register" type="email" id="user_email" name="email" required />
               <svg class="user-icon" width="18" height="18">
                 <use href="./images/icons/form.svg#icon-email"></use>
               </svg>
             </div>
-
-            <label class="form-textarea">
+            <label class="label-textarea">
               Comentarios
-              <div class="reader-textarea">
-                <textarea
-                  class="textarea"
-                  name="feedback"
-                  cols="50"
-                  rows="10"
-                  placeholder="Introduzca el texto"
-                ></textarea>
-              </div>
+              <textarea
+                class="textarea"
+                name="feedback"
+                placeholder="Introduzca el texto"
+              ></textarea>
             </label>
 
-            <label class="btn-checkbox">
-              <input
-                hidden
-                class="checkbox"
-                type="checkbox"
-                name="checked"
-                value="terminos"
-                checked
-              />
-              <svg class="checkbox-unchecked">
-                <use href="./images/icons/checked.svg#icon-unchkd"></use>
-              </svg>
-              <svg class="checkbox-checked">
+            <label class="checkbox-label" for="conditions">
+              <input class="checkbox-disabled" type="checkbox" name="policy" id="conditions" />
+              <svg class="icon-checked" width="16" height="15">
                 <use href="./images/icons/checked.svg#icon-checkd"></use>
               </svg>
               Estoy de acuerdo con el boletín informativo y acepto los <br />
@@ -519,6 +504,5 @@
       </div>
     </div>
     <script src="./js/modal.js"></script>
-    <script src="./js/subscribe.js"></script>
   </body>
 </html>
