@@ -638,7 +638,7 @@ body {
 }
 
 .boton {
-  margin: 12px 163px 50px 165px;
+  margin: 20px 163px 50px 165px;
   width: 200px;
   height: 50px;
   border-radius: 4px;
@@ -651,6 +651,12 @@ body {
   line-height: 1.87;
   letter-spacing: 0.06em;
   text-align: center;
+  display: inline-block;
+  align-items: center;
+  align-self: center;
+  padding: 10px 56px;
+  cursor: pointer;
+  border: none;
 }
 
 .boton:hover,
@@ -1327,7 +1333,7 @@ body {
   color: var(--click-order);
   font-size: 12px;
   width: 113px;
-  right: 452px;
+  right: 432px;
 }
 
 .subscribe {
