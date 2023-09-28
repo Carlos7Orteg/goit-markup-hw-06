@@ -490,15 +490,19 @@
               ></textarea>
             </label>
 
-            <label class="checkbox-label" for="conditions">
-              <input class="checkbox-disabled" type="checkbox" name="policy" id="conditions" />
-              <svg class="icon-checked" width="16" height="15">
-                <use href="./images/icons/checked.svg#icon-checkd"></use>
-              </svg>
-              Estoy de acuerdo con el boletín informativo y acepto los <br />
-              Términos y Condiciones
-            </label>
-            <button class="boton" type="submit">Enviar</button>
+            <div class="checkbox-form">
+              <input
+                class="checkbox-disabled visually-hidden"
+                id="conditions"
+                type="checkbox"
+                name="policy"
+              />
+              <label class="checkbox-label" for="conditions">
+                Estoy de acuerdo con el boletín informativo y acepto los <br />
+                Términos y Condiciones
+              </label>
+              <button class="boton" type="submit">Enviar</button>
+            </div>
           </fieldset>
         </form>
       </div>

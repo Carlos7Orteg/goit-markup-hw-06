@@ -584,12 +584,18 @@ body {
 }
 
 /* checkbox */
-.checkbox-label {
-  position: relative;
+.checkbox-form {
   display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.checkbox-label {
+  position: relative; /* posiciona el pseudo-elemento */
+  display: inline flex;
+  font-family: 'Roboto', sans-serif;
   align-items: center;
   justify-content: center;
-  font-family: 'Roboto', sans-serif;
   font-size: 14px;
   font-weight: 400;
   line-height: 1.71;
@@ -604,37 +610,59 @@ body {
 }
 
 .checkbox-disabled {
-  appearance: none;
-  position: absolute;
-  white-space: nowrap;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-  border: 0;
-  padding: 0;
-  clip: rect(0 0 0 0);
-  clip-path: inset(50%);
-  margin: -1px;
+  margin-right: 8px;
+  width: 16px;
+  height: 15px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  position: absolute; /* Superponer el checkbox visual */
+  top: 0; /* Alineación vertical superior - checkbox */
+  left: 0; /* Alineación horizontal izquierda - checkbox */
+  opacity: 0; /* Checkbox invisible - interactivo */
 }
 
-.checkbox-disabled:focus + .icon-checked {
+.checkbox-label::before {
+  content: '';
+  display: inline-block;
+  margin-right: 7px;
+  top: 1px;
+  width: 16px;
+  height: 15px;
+  border: 1px solid var(--color-uno);
+  margin-top: -25px;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: background-color 250ms var(--cubic), border 250ms var(--cubic),
+    fill 250ms var(--cubic);
+  cursor: pointer;
+}
+
+.checkbox-disabled:checked + .checkbox-label::before {
+  background-color: var(--color-studio);
+  border: 1px solid var(--color-uno);
+  border-radius: 2px;
+  background-image: url('../images/icons/checked.svg');
+}
+
+.checkbox-disabled:hover,
+.checkbox-disabled:focus + .checkbox-label::before {
   border-color: var(--click-order);
 }
 
-.icon-checked {
-  border-radius: 2px;
-  border: 1px solid var(--color-uno);
-  fill: var(--color-tres);
-  margin-right: 8px;
-  margin-top: -25px;
-  transition: background-color 250ms var(--cubic), border 250ms var(--cubic),
-    fill 250ms var(--cubic);
-}
-
-.checkbox-disabled:checked + .icon-checked {
-  fill: var(--color-tres);
-  background-color: var(--color-studio);
-  border-radius: 2px;
+.visually-hidden {
+  position: absolute !important;
+  clip: rect(1px 1px 1px 1px);
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 0 !important;
+  border: 0 !important;
+  height: 1px !important;
+  width: 1px !important;
+  overflow: hidden;
 }
 
 .boton {
